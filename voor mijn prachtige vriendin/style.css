@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:#fff;
+
+  /* ANIMATED BACKGROUND */
+  background: linear-gradient(-45deg,#ff4d6d,#ff8fa3,#ffc2d1,#ff4d6d);
+  background-size:400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+/* BACKGROUND ANIMATION */
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:50px 20px 20px;
+}
+
+.hero h1{
+  font-size:3rem;
+  text-shadow:0 10px 30px rgba(0,0,0,.3);
+  animation: popIn 1s ease;
+}
+
+.hero p{
+  margin-top:10px;
+  opacity:.9;
+}
+
+/* GRID */
+main{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+  padding:30px;
+}
+
+/* CARD GLASS STYLE */
+.card{
+  background:rgba(255,255,255,.15);
+  backdrop-filter: blur(15px);
+  border:1px solid rgba(255,255,255,.3);
+  padding:20px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.4s ease;
+  box-shadow:0 10px 40px rgba(0,0,0,.2);
+
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 60px rgba(255,0,100,.4);
+}
+
+/* floating card movement */
+@keyframes floatCard{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-8px);}
+  100%{transform:translateY(0px);}
+}
+
+/* DETAIL PAGE */
+.detail-page{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+.detail-card{
+  width:90%;
+  max-width:600px;
+  background:rgba(255,255,255,.15);
+  backdrop-filter: blur(20px);
+  border:1px solid rgba(255,255,255,.3);
+  padding:30px;
+  border-radius:25px;
+  text-align:center;
+  animation: popIn .6s ease;
+  box-shadow:0 20px 80px rgba(0,0,0,.3);
+}
+
+.detail-card img{
+  width:100%;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 10px 40px rgba(0,0,0,.3);
+}
+
+button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:12px;
+  background:white;
+  color:#ff2e63;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+/* HEARTS */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation: floatUp 6s linear forwards;
+  pointer-events:none;
+  filter: drop-shadow(0 0 10px rgba(255,0,100,.7));
+}
+
+/* HEART FLOAT */
+@keyframes floatUp{
+  0%{
+    transform:translateY(0) scale(1) rotate(0deg);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-110vh) scale(1.5) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* POP ANIMATION */
+@keyframes popIn{
+  from{opacity:0; transform:scale(.8);}
+  to{opacity:1; transform:scale(1);}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:2rem;
+  }
+
+  main{
+    padding:15px;
+  }
+}
