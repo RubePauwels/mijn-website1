@@ -1,0 +1,16 @@
+{
+  "name": "Jill ❤️ 100 Redenen",
+  "short_name": "Voor Jill",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ff4d6d",
+  "theme_color": "#ff2e63",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
